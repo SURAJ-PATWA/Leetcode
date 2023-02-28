@@ -15,12 +15,8 @@ public:
                     pq.push({sum,{nums1[i],nums2[j]}});
                 }
                 else{
-                    break;
-                }
-                
-                
-            }
-        }
+                    break;}}}
+            
         
        vector<vector<int>>ans;
         while(!pq.empty()){
@@ -28,9 +24,4 @@ public:
             pq.pop();
         }
         reverse(ans.begin(),ans.end());
-        return ans;
-        
-        
-        
-    }
-};
+        return ans;}};
