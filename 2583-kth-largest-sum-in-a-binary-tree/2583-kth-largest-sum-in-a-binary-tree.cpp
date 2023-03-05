@@ -15,10 +15,10 @@ public:
       priority_queue<long , vector<long>, greater<long>> pq;
         queue<TreeNode*> q;
         q.push(root);
-        long long currLevel = 0;
+        //long long currLevel = 0;
         while(!q.empty()) {
             int n = q.size();
-            currLevel++;
+            //currLevel++;
             long long levelSum = 0;
             for(int i = 0; i < n; i++) {
                 TreeNode* curr = q.front();
