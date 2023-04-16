@@ -26,17 +26,7 @@ public:
        return dp[m][n]; 
 
     }
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+     
     
     
     bool isSubsequence(string s, string t) {
@@ -45,10 +35,8 @@ public:
        
         
        int LCS=lcs( m,  n, s, t);
-        if(LCS==m){
-            return true;
-        }
-        return false;
+        
+        return LCS==m;
         
     }
 };
