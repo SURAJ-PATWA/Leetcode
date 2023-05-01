@@ -23,7 +23,7 @@ public:
         slow = slow->next;
     }
 
-    // Swap values of node1 and node2
+    // Swap values of slow and p1     
     swap(p1->val, slow->val);
 
     // Return the head of the linked list
