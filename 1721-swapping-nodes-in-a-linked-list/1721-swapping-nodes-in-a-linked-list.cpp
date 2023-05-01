@@ -11,20 +11,20 @@
 class Solution {
 public:
     ListNode* swapNodes(ListNode* head, int k) {
- ListNode* node1 = head;
+ ListNode* p1 = head;
     for (int i = 1; i < k; i++) {
-        node1 = node1->next;
+        p1 = p1->next;
     }
     // Find kth node from end
-    ListNode* node2 = head;
-    ListNode* temp = node1;
-    while (temp->next != NULL) {
-        temp = temp->next;
-        node2 = node2->next;
+    ListNode* slow = head;
+    ListNode* fast = p1;
+    while (fast->next != NULL) {
+        fast = fast->next;
+        slow = slow->next;
     }
 
     // Swap values of node1 and node2
-    swap(node1->val, node2->val);
+    swap(p1->val, slow->val);
 
     // Return the head of the linked list
     return head;
