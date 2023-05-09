@@ -7,17 +7,14 @@ public:
        
         for(int i=0;i<N;i++){
             sum1+=arr[i][i];
+              if(i!=N-i-1){
+                sum1+=arr[i][N-i-1]; 
+            }
            
         }
         
         
-        for(int i=0;i<N;i++){
-            
-            
-            if(i!=N-i-1){
-                sum1+=arr[i][N-i-1]; 
-            }
-        }
+       
         return sum1;
         
         
