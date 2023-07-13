@@ -16,8 +16,9 @@ public:
        vector<vector<int>>fans;
         queue<TreeNode *>q;
         q.push(root);
-        vector<int>ans;
+       
         while(!q.empty()){
+             vector<int>ans;
             int count=q.size();
             for(int i=0;i<count;i++){
                 TreeNode*curr=q.front();
@@ -27,7 +28,7 @@ public:
                 if(curr->right!=NULL)q.push(curr->right);
             }
             fans.push_back(ans);
-            ans.clear();
+            
         }
         return fans;
         
