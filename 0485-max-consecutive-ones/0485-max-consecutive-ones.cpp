@@ -5,9 +5,9 @@ public:
         for(int i=0;i<arr.size();i++){
             if(arr[i]==0)curr=0;
             else{
-                curr++;
+                curr++;}
             res=max(res,curr);
-        }
+        
         }
         return res;
         
