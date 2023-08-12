@@ -1,47 +1,42 @@
 class Solution {
 public:
-    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+    vector<int> spiralOrder(vector<vector<int>>& mat) {
         vector<int>ans;
-     int m = matrix.size();
-    int n = matrix[0].size();
-
-    int row_start = 0, col_start = 0, row_end = m - 1, col_end = n - 1;
-
-    while (row_start <= row_end && col_start <= col_end) {
-        // Print the first row from the remaining rows
-        for (int i = col_start; i <= col_end; i++) {
-            ans.push_back( matrix[row_start][i]);
-        }
-        row_start++;
-
-        // Print the last column from the remaining columns
-        for (int i = row_start; i <= row_end; i++) {
-           
-            ans.push_back(matrix[i][col_end]);
-        }
-        col_end--;
-
-        // Print the last row from the remaining rows
-        if (row_start <= row_end) {
-            for (int i = col_end; i >= col_start; i--) {
-               
-                ans.push_back(matrix[row_end][i]);
+        int n=mat.size();
+        int m=mat[0].size();
+        int left=0;int right=m-1;
+        int top=0;int bottom=n-1;
+        while(left<=right && top<=bottom){
+            //  right
+            for(int i=left;i<=right;i++){
+                ans.push_back(mat[top][i]);
             }
-            row_end--;
-        }
-
-        // Print the first column from the remaining columns
-        if (col_start <= col_end) {
-            for (int i = row_end; i >= row_start; i--) {
-              ans.push_back(matrix[i][col_start]);
+            top++;
+            
+            //bottom
+            
+           for(int i=top;i<=bottom;i++){
+               ans.push_back(mat[i][right]);
+           } 
+            right--;
+            
+            //left            ager single  array ho to 
+            if(top<=bottom){
+            for(int i=right;i>=left;i--){
+                ans.push_back(mat[bottom][i]);
             }
-            col_start++;
+            bottom--;
+            }
+            
+            //top  ager single element ho to kuch restristion hoga
+            if(left<=right){
+            for(int i=bottom;i>=top;i--){
+                ans.push_back(mat[i][left]);
+            }
+            left++;}
+            
+            
         }
-    }
-return ans;
-
-        
-       
-        
+        return ans;
     }
 };
