@@ -12,20 +12,25 @@ public:
 	       neg.push_back(arr[i]);
 	    }
 	    }
+        for(int i=0;i<n/2;i++){
+            arr[2*i]=pos[i];
+            arr[2*i+1]=neg[i];
+        }
+        return arr;
 	    
 	   
-	    int i=0,j=0,k=0;
-	   while(i<n){
+// 	    int i=0,j=0,k=0;
+// 	   while(i<n){
 	       
-	       if(j<pos.size()){
-	          arr[i]=pos[j];
-	          i++;j++;
-	       }
-	       if(k<neg.size()){
-	           arr[i]=neg[k];
-	           i++;k++;
-	       }}
-        return arr;
+// 	       if(j<pos.size()){
+// 	          arr[i]=pos[j];
+// 	          i++;j++;
+// 	       }
+// 	       if(k<neg.size()){
+// 	           arr[i]=neg[k];
+// 	           i++;k++;
+// 	       }}
+//         return arr;
 	       
 	       
     }
