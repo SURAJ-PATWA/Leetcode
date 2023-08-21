@@ -5,7 +5,8 @@ public:
         int ans=0;
         while(n!=0){
             int rem=n%10;
-           if((ans > INT_MAX/10)||(ans<INT_MIN/10)){
+            // check for overflow before adding next digit
+           if((ans > INT_MAX/10)||(ans<INT_MIN/10)){  
                
                    return 0;
                }
