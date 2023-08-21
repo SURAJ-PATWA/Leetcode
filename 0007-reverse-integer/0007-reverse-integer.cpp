@@ -10,7 +10,8 @@ public:
                
                    return 0;
                }
-            int rem=n%10;
+          int  rem=n%10;
+            
             ans=ans*10+rem;
             n=n/10;
         }
