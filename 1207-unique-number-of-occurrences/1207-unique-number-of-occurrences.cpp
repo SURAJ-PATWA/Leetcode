@@ -13,14 +13,3 @@ public:
         
     }
 };
-// set <int> s;
-//         map <int, int> m;
-//         for(auto &x : arr){
-//             m[x]++;
-//         }
-//         for(auto it = m.begin() ; it != m.end() ; it++){
-//             s.insert(it->second);
-//         }
-//         if(m.size() == s.size())
-//             return true;
-//         return false;
