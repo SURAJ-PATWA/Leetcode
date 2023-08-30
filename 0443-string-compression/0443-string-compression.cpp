@@ -15,7 +15,7 @@ int n=chars.size();
            // char[index]=count ka assign value but 12 ho to problem occure we we split 
             if(count>1){
                 string count_str=to_string(count);
-                for(char &ch:count_str){
+                for(char ch:count_str){
                     chars[index]=ch;
                     index++;
                 }
