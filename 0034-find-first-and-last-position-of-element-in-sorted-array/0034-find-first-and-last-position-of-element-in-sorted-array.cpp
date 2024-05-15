@@ -1,55 +1,58 @@
 class Solution {
-public:
-    int first(vector<int>& nums, int target){
-        int n=nums.size();
-       int pos=-1;int s=0;int e= n-1;
+    private:
+    
+    int SolveFirst(vector<int>& arr , int x){
+        int first=-1;
+        int start=0;int n=arr.size();int end=n-1;
         
-        while(s<=e){
-            int mid=(s+e)/2;
-            
-            if(nums[mid]==target){
-                pos=mid;
-                e=mid-1;
-                
+        while(start<=end){
+            int mid=(start+end)/2;
+            if(arr[mid]==x){
+                first =mid;
+                end=mid-1;
             }
-            else if(nums[mid]<target){
-                s=mid+1;
+            else if(arr[mid]>x){
+                end=mid-1;
             }
             else{
-                e=mid-1;
-                
+                start=mid+1;
             }
         }
-        return pos;
-    }
-    
-     int Second(vector<int>& nums, int target){
-        int n=nums.size();
-           int pos=-1;int s=0;int e= n-1;
-         while(s<=e){
-            int mid=(s+e)/2;
-            
-            if(nums[mid]==target){
-                pos=mid;
-                s=mid+1;
-                
-            }
-            else if(nums[mid]<target){
-                s=mid+1;
-            }
-            else{
-               e=mid-1; 
-            }
-        }
-        return pos;
+        return first;
+        
     }
     
     
     
-    vector<int> searchRange(vector<int>& nums, int target) {
-        vector<int>fans(2);
-        fans[0]=first(nums,target);
-        fans[1]=Second(nums,target);
-        return fans;
+    int SolveLast(vector<int>& arr , int x){
+        int Last=-1;
+        int start=0;int n=arr.size();int end=n-1;
+        
+         while(start<=end){
+            int mid=(start+end)/2;
+            if(arr[mid]==x){
+                Last =mid;
+                start=mid+1;
+            }
+            else if(arr[mid]>x){
+                end=mid-1;
+            }
+            else{
+                start=mid+1;
+            }
+        }
+        return Last;
+        
+    } 
+    
+    
+    
+    
+    
+public:
+    vector<int> searchRange(vector<int>& arr, int target) {
+        int first =SolveFirst(arr,target);
+        int last=SolveLast(arr,target);
+        return {first ,last};
     }
 };
