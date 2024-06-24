@@ -16,12 +16,12 @@ int n=arr.size();
             if(mp.find(sum-k)!=mp.end()){
                 c+=mp[sum-k];
             }
-            if(mp.find(sum)!=mp.end()){
+            // if(mp.find(sum)!=mp.end()){
                 mp[sum]++;
-            }
-            else{
-                mp[sum]=1;
-            }
+            // }
+            // else{
+            //     mp[sum]=1;
+            // }
         }
         return c;
     }
